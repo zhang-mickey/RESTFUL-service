@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+<div class="w-full overflow-x-auto">
+  <table class="w-full bg-white rounded shadow overflow-hidden">
+    <thead class="bg-gray-200">
+      <tr>
+        <th
+          class="text-left py-3 px-4 uppercase font-semibold text-sm text-gray-700"
+        >
+          Original URL
+        </th>
+        <th
+          class="text-left py-3 px-4 uppercase font-semibold text-sm text-gray-700"
+        >
+          Short URL
+        </th>
+        <th
+          class="text-left py-3 px-4 uppercase font-semibold text-sm text-gray-700"
+        >
+          Date
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr class="hover:bg-gray-100">
+        <td class="border-t">
+          <p class="py-3 px-4">{{ result[0] }}</p>
+        </td>
+        <td class="border-t">
+          <a
+            href="{{ request.host_url }}{{ result[1] }}"
+            class="py-3 px-4 text-blue-500 hover:text-blue-700"
+            >{{ request.host_url }}{{ result[1] }}</a
+          >
+        </td>
+        <td class="border-t">
+          <p class="py-3 px-4">{{ result[2] }}</p>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

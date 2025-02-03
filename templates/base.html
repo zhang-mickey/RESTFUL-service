@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>URL Shortener</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="p-6 bg-white flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-gray-900">URL Shortener</a>
+      <div>
+        <a href="/" class="text-gray-800 mr-6">Home</a>
+        <a href="/history" class="text-gray-800">History</a>
+      </div>
+    </nav>
+    <main class="container mx-auto max-w-xl pt-8 min-h-screen">
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

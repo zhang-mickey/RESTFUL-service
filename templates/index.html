@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+<div class="text-center">
+  <h1 class="text-3xl font-bold text-gray-900 mb-8">Shorten Your URL</h1>
+  <form action="/" method="POST" class="w-full max-w-sm mx-auto">
+    <div
+      class="flex items-center border-2 border-blue-500 rounded overflow-hidden"
+    >
+      <input
+        type="text"
+        name="original_url"
+        placeholder="Enter URL"
+        class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 leading-tight focus:outline-none"
+      />
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-r focus:outline-none"
+      >
+        Shorten
+      </button>
+    </div>
+  </form>
+  {% if short_url %}
+  <div class="mt-4">
+    <p class="text-lg text-gray-700">
+      Short URL:
+      <a href="{{ request.host_url }}{{ short_url }}" class="text-blue-500"
+        >{{ request.host_url }}{{ short_url }}</a
+      >
+    </p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
